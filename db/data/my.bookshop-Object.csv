@@ -1,5 +1,5 @@
 ID;Itemno;Itemstatus;Salesoffice;Deliveryqty;Approvedqty;Invrecno_Receiptno
-20466921-7d57-4e76-b14c-e53fd97dcb11;1;Created;KarolBagOffice1;12;0;REC1234
+20466921-7d57-4e76-b14c-e53fd97dcb11;1;Created;KarolBagOffice1;12;0;REC1238
 20466921-7d57-4e76-b14c-e53fd97dcb12;1;Created;CG1;5;0;REC1236
 20466921-7d57-4e76-b14c-e53fd97dcb13;2;Shipped;CG2;5;5;REC1236
 20466921-7d57-4e76-b14c-e53fd97dcb14;1;Created;PM1;5;5;REC1237
