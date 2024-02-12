@@ -1,29 +1,29 @@
 {
   "scopes": [
     {
-      "name": "$XSAPPNAME.RiskViewer",
-      "description": "RiskViewer"
+      "name": "$XSAPPNAME.salesperson",
+      "description": "salesperson"
     },
     {
-      "name": "$XSAPPNAME.RiskManager",
-      "description": "RiskManager"
+      "name": "$XSAPPNAME.salesmanager",
+      "description": "salesmanager"
     }
   ],
   "attributes": [],
   "role-templates": [
     {
-      "name": "RiskViewer",
+      "name": "salesperson",
       "description": "generated",
       "scope-references": [
-        "$XSAPPNAME.RiskViewer"
+        "$XSAPPNAME.salesperson"
       ],
       "attribute-references": []
     },
     {
-      "name": "RiskManager",
+      "name": "salesmanager",
       "description": "generated",
       "scope-references": [
-        "$XSAPPNAME.RiskManager"
+        "$XSAPPNAME.salesmanager"
       ],
       "attribute-references": []
     }
