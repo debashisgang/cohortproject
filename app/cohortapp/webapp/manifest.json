@@ -93,11 +93,6 @@
           "pattern": "Header({key}):?query:",
           "name": "HeaderObjectPage",
           "target": "HeaderObjectPage"
-        },
-        {
-          "pattern": "Header({key})/object1({key2}):?query:",
-          "name": "Header_object1ObjectPage",
-          "target": "Header_object1ObjectPage"
         }
       ],
       "targets": {
@@ -143,25 +138,13 @@
                     "selectionMode": "Single",
                     "type": "ResponsiveTable"
                   }
-                }
-              },
-              "navigation": {
-                "object1": {
-                  "detail": {
-                    "route": "Header_object1ObjectPage"
+                },
+                "object1/@com.sap.vocabularies.UI.v1.LineItem#Object1": {
+                  "tableSettings": {
+                    "selectionMode": "Single"
                   }
                 }
-              }
-            }
-          }
-        },
-        "Header_object1ObjectPage": {
-          "type": "Component",
-          "id": "Header_object1ObjectPage",
-          "name": "sap.fe.templates.ObjectPage",
-          "options": {
-            "settings": {
-              "contextPath": "/Header/object1",
+              },
               "navigation": {}
             }
           }

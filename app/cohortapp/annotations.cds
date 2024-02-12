@@ -6,7 +6,6 @@ Capabilities.SearchRestrictions: {
   },
     UI.UpdateHidden:false,
     UI.DeleteHidden:true,
-    UI.CreateHidden:false,
     UI.LineItem : [
         {
             $Type : 'UI.DataField',
@@ -38,16 +37,11 @@ Capabilities.SearchRestrictions: {
             Value : Shipstatus,
             ![@UI.Importance] : #High,
         },
+       
         {
             $Type : 'UI.DataFieldForAction',
-            Action : 'CatalogService.Changestatus',
-            Label : '{i18n>Changestatus}',
-            ![@UI.Hidden]:false,
-        },
-        {
-            $Type : 'UI.DataFieldForAction',
-            Action : 'CatalogService.detailview',
-            Label : 'detailview',
+            Action : 'CatalogService.ChangeShipstatus',
+            Label : 'ChangeShipstatus',
         },
     ]
 );
@@ -104,6 +98,12 @@ annotate service.Header with @(
             Label : 'General Information',
             Target : '@UI.FieldGroup#GeneratedGroup1',
         },
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Object',
+            ID : 'Object',
+            Target : 'object1/@UI.LineItem#Object1',
+        },
     ]
 );
 annotate service.Header with @(
@@ -122,51 +122,6 @@ annotate service.Header with {
 annotate service.Header with {
     Shipstatus @Common.Label : 'Shipstatus'
 };
-annotate service.Header with {
-    Shipstatus @(Common.ValueList : {
-            $Type : 'Common.ValueListType',
-            CollectionPath : 'Header',
-            Parameters : [
-                {
-                    $Type : 'Common.ValueListParameterInOut',
-                    LocalDataProperty : Shipstatus,
-                    ValueListProperty : 'Shipstatus',
-                },
-            ],
-            Label : 'Shipstatus',
-        },
-        Common.ValueListWithFixedValues : true
-)};
-annotate service.Header with {
-    Shiplocation @(Common.ValueList : {
-            $Type : 'Common.ValueListType',
-            CollectionPath : 'Header',
-            Parameters : [
-                {
-                    $Type : 'Common.ValueListParameterInOut',
-                    LocalDataProperty : Shiplocation,
-                    ValueListProperty : 'Shiplocation',
-                },
-            ],
-            Label : 'Shiplocation',
-        },
-        Common.ValueListWithFixedValues : true
-)};
-annotate service.Header with {
-    Receiptno @(Common.ValueList : {
-            $Type : 'Common.ValueListType',
-            CollectionPath : 'Header',
-            Parameters : [
-                {
-                    $Type : 'Common.ValueListParameterInOut',
-                    LocalDataProperty : Receiptno,
-                    ValueListProperty : 'Receiptno',
-                },
-            ],
-            Label : 'Receiptno',
-        },
-        Common.ValueListWithFixedValues : true
-)};
 annotate service.Object with @(
  
     UI.LineItem #Object : [
@@ -257,4 +212,45 @@ annotate service.Object with @(
             Facets : [
             ],
         },]
+);
+annotate service.Object with @(
+    UI.UpdateHidden:true,
+    UI.DeleteHidden:true,
+    UI.CreateHidden:true,
+    UI.LineItem #Object1 : [
+        {
+            $Type : 'UI.DataField',
+            Value : Approvedqty,
+            Label : 'Approvedqty',
+        },{
+            $Type : 'UI.DataField',
+            Value : Deliveryqty,
+            Label : 'Deliveryqty',
+        },{
+            $Type : 'UI.DataField',
+            Value : ID,
+            Label : 'ID',
+        },{
+            $Type : 'UI.DataField',
+            Value : Itemstatus,
+            Label : 'Itemstatus',
+        },
+        {
+            $Type : 'UI.DataFieldForAction',
+            Action : 'CatalogService.ChangeItemstatus',
+            Label : 'ChangeItemstatus',
+        },
+        {
+            $Type : 'UI.DataFieldForAction',
+            Action : 'CatalogService.Deleteobject',
+            Label : 'Deleteobject',
+        },
+        {
+            $Type : 'UI.DataFieldForAction',
+            Action : 'CatalogService.Create',
+            Label : 'Create',
+        },]
+);
+annotate service.Header with @(
+    UI.Identification : []
 );
