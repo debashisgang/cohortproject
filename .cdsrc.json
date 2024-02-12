@@ -5,19 +5,19 @@
         "users": {
         "risk.viewer@tester.sap.com": {
         "password": "initial",
-        "ID": "riskviewer",
+        "ID": "salesperson",
         "userAttributes": {
-        "email": "risk.viewer@tester.sap.com"
+        "email": "sales.person@tester.sap.com"
         },
-        "roles": ["RiskViewer"]
+        "roles": ["salesperson"]
         },
         "risk.manager@tester.sap.com": {
         "password": "initial",
-        "ID": "riskmanager",
+        "ID": "salesmanager",
         "userAttributes": {
-        "email": "risk.manager@tester.sap.com"
+        "email": "sales.manager@tester.sap.com"
         },
-        "roles": ["RiskManager"]
+        "roles": ["salesmanager"]
         }
         }
         }

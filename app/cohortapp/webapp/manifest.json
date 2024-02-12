@@ -150,6 +150,17 @@
                 "object1/@com.sap.vocabularies.UI.v1.LineItem#Object1": {
                   "tableSettings": {
                     "selectionMode": "Single"
+                  },
+                  "actions": {
+                    "DataFieldForAction::CatalogService.ChangeItemstatus": {
+                      "enableOnSelect": "single"
+                    },
+                    "DataFieldForAction::CatalogService.Deleteobject": {
+                      "enableOnSelect": "single"
+                    },
+                    "DataFieldForAction::CatalogService.Create": {
+                      "enableOnSelect": "single"
+                    }
                   }
                 }
               },

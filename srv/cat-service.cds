@@ -4,7 +4,7 @@ service CatalogService {
       entity Header @(restrict: [
           {
                grant: ['READ','WRITE','UPDATE','UPSERT','DELETE'],
-               to   : 'RiskViewer'
+               to   : 'salesperson'
           },
           {
                grant: [
@@ -17,7 +17,7 @@ service CatalogService {
                     
 
                ], // Allowing CDS events by explicitly mentioning them
-               to   : 'RiskManager'
+               to   : 'salesmanager'
           }
      ])            
       as projection on my.Header actions {
