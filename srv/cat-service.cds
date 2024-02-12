@@ -20,16 +20,17 @@ service CatalogService {
                to   : 'RiskManager'
           }
      ])            
-     as projection on my.Header actions {
-                           action ChangeShipstatus();
+      as projection on my.Header actions {
+                           action ChangeShipstatus() returns Header;
+                           
                       };
 
       annotate Header with @odata.draft.enabled;
 
      entity Object as projection on my.Object actions{
-          action ChangeItemstatus();
-          action Create(Itemno:String,Salesoffice:String,Deliveryqty:String,Approvedqty:String);
-          action Deleteobject();
+          action ChangeItemstatus() returns Object;
+          action Create(Itemno:String,Salesoffice:String,Deliveryqty:String,Approvedqty:String) returns Object;
+          action Deleteobject() returns Object;
      }
 
      annotate Object with @odata.draft.enabled;

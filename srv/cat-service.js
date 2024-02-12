@@ -18,6 +18,7 @@
 const cds = require('@sap/cds');
 
 module.exports = cds.service.impl((srv) => {
+    const{Header}=srv.entities;
     srv.on('ChangeShipstatus', 'Header', async (req) => {
         console.log("it is our request",req);
         const { Receiptno } = req.params[0];
@@ -34,7 +35,9 @@ module.exports = cds.service.impl((srv) => {
                 .set({ Shipstatus: 'Completed' })
                 .where({ Receiptno })
             );
+            
         } 
+        return Header;
     });
     // srv.on('ChangeItemstatus', 'Header', async (req) => {
     //     console.log("it is our request",req);
@@ -67,6 +70,7 @@ module.exports = cds.service.impl((srv) => {
         
     // });
     srv.on('ChangeItemstatus', 'Object', async (req) => {
+        const{Object}=srv.entities;
         console.log("it is our request",req);
         const { ID } = req.params[1];
          const result = await cds.transaction(req).run(
@@ -92,8 +96,10 @@ module.exports = cds.service.impl((srv) => {
         else{
             req.error(404,`ItemStatus Can not be changed as Shipstatus is not Completed for Receipt No:${Receiptno}`)
         }    
+        return Object;
     });
     srv.on('Deleteobject', 'Object', async (req) => {
+        const{Object}=srv.entities;
         console.log("requestis",req)
         const { ID } = req.params[1];
         console.log("ID IS:",ID);
@@ -111,9 +117,11 @@ module.exports = cds.service.impl((srv) => {
             req.error(404,`Object Does not Exist`)
     
         }
+        return Object;
         
     });
     srv.on('Create', 'Object', async (req) => {
+        const{Object}=srv.entities;
         // Itemstatus;Invrecno_Receiptno
         console.log("requestparams:",req.params);
         console.log("requestparams receipt:",req.params[0].Receiptno);
@@ -149,6 +157,7 @@ module.exports = cds.service.impl((srv) => {
                  .entries(updatedFields)
              );
              req.info(200,`Item Created`)
+             return Object;
      
          //     return `Header entry with Receiptno '${Receiptno}' updated successfully.`;
          // } else {

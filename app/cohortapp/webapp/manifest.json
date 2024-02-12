@@ -118,6 +118,14 @@
                     "quickVariantSelection": {
                       "showCounts": true
                     }
+                  },
+                  "actions": {
+                    "DataFieldForAction::CatalogService.ChangeShipstatus": {
+                      "enableOnSelect": "single",
+                      "afterExecution": {
+                        "enableAutoScroll": true
+                      }
+                    }
                   }
                 }
               }
